@@ -1,5 +1,6 @@
 package com.example.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +25,9 @@ public class DetalleVenta {
 	@JoinColumn(name = "id_producto", nullable = false)
 	private Producto producto;
 
+	@Column(nullable = false)
+	private int cantidad;
+
 	public Integer getIdDetalleVenta() {
 		return idDetalleVenta;
 	}
@@ -46,6 +50,14 @@ public class DetalleVenta {
 
 	public void setProducto(Producto producto) {
 		this.producto = producto;
+	}
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
 	}
 
 }
