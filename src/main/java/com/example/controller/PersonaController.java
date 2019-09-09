@@ -57,7 +57,7 @@ public class PersonaController {
 		Persona persona = personaService.buscarPorId(idPersona);
 		
 		if(persona == null)
-			throw new ModelNotFoundException("NO ES POSIBLE ELIMINAR EL REGISTRO, LA PERSONA CUYO ID ES: " + idPersona + " NO FUE ENCONTRADA.");
+			throw new ModelNotFoundException("NO ES POSIBLE ELIMINAR EL REGISTRO, LA PERSONA CON ID: " + idPersona + " NO FUE ENCONTRADA.");
 		else
 			personaService.eliminar(idPersona);
 		
