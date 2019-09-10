@@ -32,8 +32,7 @@ public class ProductoServiceImpl implements IProductoService{
 
 	@Override
 	public List<Producto> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		return productoRepo.findAll();
 	}
 
 	@Override
