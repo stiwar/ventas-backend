@@ -19,7 +19,7 @@ public class Venta {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idVenta;
 
-	@JoinColumn(name = "id_persona")
+	@JoinColumn(name = "id_persona", nullable = false)
 	@ManyToOne
 	private Persona persona;
 
@@ -31,10 +31,6 @@ public class Venta {
 
 	public Integer getIdVenta() {
 		return idVenta;
-	}
-
-	public void setIdVenta(Integer idVenta) {
-		this.idVenta = idVenta;
 	}
 
 	public Persona getPersona() {

@@ -32,10 +32,6 @@ public class DetalleVenta {
 		return idDetalleVenta;
 	}
 
-	public void setIdDetalleVenta(Integer idDetalleVenta) {
-		this.idDetalleVenta = idDetalleVenta;
-	}
-
 	public Venta getVenta() {
 		return venta;
 	}

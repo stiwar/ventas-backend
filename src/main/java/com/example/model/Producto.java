@@ -14,17 +14,15 @@ public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idProducto;
+	
 	@Column(nullable = false, length = 70)
 	private String nombre;
+	
 	@Column(nullable = false, length = 50)
 	private String marca;
 
 	public Integer getIdProducto() {
 		return idProducto;
-	}
-
-	public void setIdProducto(Integer idProducto) {
-		this.idProducto = idProducto;
 	}
 
 	public String getNombre() {

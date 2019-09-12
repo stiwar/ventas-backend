@@ -25,10 +25,6 @@ public class Persona {
 		return idPersona;
 	}
 
-	public void setIdPersona(Integer idPersona) {
-		this.idPersona = idPersona;
-	}
-
 	public String getNombres() {
 		return nombres;
 	}

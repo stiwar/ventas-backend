@@ -42,8 +42,9 @@ public class PersonaController {
 	}
 
 	@PostMapping
-	public Persona registrarPersona(@RequestBody Persona persona) {
-		return personaService.registrar(persona);
+	public ResponseEntity<Persona> registrarPersona(@RequestBody Persona persona) {
+		 Persona per = personaService.registrar(persona);
+		 return new ResponseEntity<>(per, HttpStatus.CREATED);
 	}
 
 	@PutMapping

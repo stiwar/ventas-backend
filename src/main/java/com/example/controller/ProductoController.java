@@ -43,8 +43,9 @@ public class ProductoController {
 	}
 
 	@PostMapping
-	public Producto registrarProducto(@RequestBody Producto producto) {
-		return productoService.registrar(producto);
+	public ResponseEntity<Producto> registrarProducto(@RequestBody Producto producto) {
+		Producto prod = productoService.registrar(producto);
+		return new ResponseEntity<>(prod, HttpStatus.CREATED);
 	}
 
 	@PutMapping
@@ -56,6 +57,7 @@ public class ProductoController {
 	public ResponseEntity<Object> eliminarProducto(@PathVariable("id") Integer idProducto) {
 		
 		Producto producto = productoService.buscarPorId(idProducto);
+		
 		if(producto == null)
 			throw new ModelNotFoundException("NO ES POSIBLE ELIMINAR EL REGISTRO, EL PRODUCTO CUYO ID ES: " + idProducto + " NO FUE ENCONTRADO.");
 		else
