@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+
 @Entity
 @Table(name = "VENTA")
 public class Venta {
@@ -26,6 +29,7 @@ public class Venta {
 	@Column(nullable = false)
 	private double importe;
 
+	@JsonSerialize(using = ToStringSerializer.class)
 	@Column(nullable = false)
 	private LocalDateTime fecha;
 

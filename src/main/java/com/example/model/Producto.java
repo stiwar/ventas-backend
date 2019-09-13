@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "PRODUCTO")
@@ -16,9 +17,11 @@ public class Producto {
 	private Integer idProducto;
 	
 	@Column(nullable = false, length = 70)
+	@Size(min = 2, message = "El nombre del producto debe tener mínimo 2 caracteres")
 	private String nombre;
 	
 	@Column(nullable = false, length = 50)
+	@Size(min = 2, message = "El nombre de la marca debe tener mínimo 2 caracteres")
 	private String marca;
 
 	public Integer getIdProducto() {

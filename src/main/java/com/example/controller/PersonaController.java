@@ -2,6 +2,8 @@ package com.example.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,13 +44,13 @@ public class PersonaController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Persona> registrarPersona(@RequestBody Persona persona) {
+	public ResponseEntity<Persona> registrarPersona(@Valid @RequestBody Persona persona) {
 		 Persona per = personaService.registrar(persona);
 		 return new ResponseEntity<>(per, HttpStatus.CREATED);
 	}
 
 	@PutMapping
-	public Persona actualizarPersona(@RequestBody Persona persona) {
+	public Persona actualizarPersona(@Valid @RequestBody Persona persona) {
 		return personaService.modificar(persona);
 	}
 

@@ -2,6 +2,8 @@ package com.example.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,13 +45,13 @@ public class ProductoController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Producto> registrarProducto(@RequestBody Producto producto) {
+	public ResponseEntity<Producto> registrarProducto(@Valid @RequestBody Producto producto) {
 		Producto prod = productoService.registrar(producto);
 		return new ResponseEntity<>(prod, HttpStatus.CREATED);
 	}
 
 	@PutMapping
-	public Producto actualizarProducto(@RequestBody Producto producto) {
+	public Producto actualizarProducto(@Valid @RequestBody Producto producto) {
 		return productoService.modificar(producto);
 	}
 
