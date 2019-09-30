@@ -58,7 +58,7 @@ public class VentaServiceImpl implements IVentaService {
 
 		// inserción tabla detalle_venta
 		for (DetalleVenta detalle : detalleVenta) {
-			detalle.setVenta(venta);
+			detalle.setVenta(venta); //antes de insertar en la tabla DetalleVenta hay que asignarle el registro recién insertado de la venta.
 			detalleVentaRepo.save(detalle);
 			//ventaRepo.registrarVentaDetalle(ventaDetalleDTO.getVenta().getIdVenta(), producto.getIdProducto(), ventaDetalleDTO.getCantidadesPorProducto().get(cont));
 		}
