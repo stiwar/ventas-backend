@@ -37,7 +37,7 @@ public class ProductoServiceImpl implements IProductoService{
 
 	@Override
 	public void eliminar(Integer id) {
-		// TODO Auto-generated method stub
+		productoRepo.deleteById(id);
 		
 	}
 
